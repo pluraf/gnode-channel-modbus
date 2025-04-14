@@ -1,0 +1,14 @@
+[Unit]
+Description=G-Node Modbus Channel
+Wants=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=gnode
+WorkingDirectory=/gnode
+ExecStart=/usr/bin/gnode-channel-modbus --port 1502
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
